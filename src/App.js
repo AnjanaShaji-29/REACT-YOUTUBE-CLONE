@@ -17,7 +17,7 @@ const Main = styled.div  `
 `;
 
 const Wrapper = styled.div  `
-
+  padding:10px;
 `;
 
 function App() {

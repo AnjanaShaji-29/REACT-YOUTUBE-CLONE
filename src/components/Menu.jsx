@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Youtubelogo from "../img/logo.png";
 import { AccountCircleOutlined, ArticleOutlined, ExploreOutlined, FlagOutlined, HelpOutlineOutlined, HistoryOutlined, Home, LibraryMusicOutlined, LiveTvOutlined, MovieOutlined, SettingsBrightnessOutlined, SettingsOutlined, SportsEsportsOutlined, SubscriptionsOutlined, VideoLibraryOutlined } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -72,9 +73,11 @@ export default function Menu({darkMode, setDarkMode}) {
   return (
     <Container>
     <Wrapper>
+    <Link to="/" style={{ textDecoration: "none", color: "inherit"}}> 
     <Logo>
         <Img src={Youtubelogo} /> Youtube
     </Logo>
+    </Link>
     <Item>
       <Home/> Home
     </Item>
@@ -123,7 +126,8 @@ export default function Menu({darkMode, setDarkMode}) {
         <HelpOutlineOutlined /> Help
     </Item>
     <Item onClick={() => setDarkMode(!darkMode)}>
-        <SettingsBrightnessOutlined/> Light Mode
+        <SettingsBrightnessOutlined/> 
+        {darkMode ? "Light" : "Dark"} Mode
     </Item>
     </Wrapper>
     </Container>
