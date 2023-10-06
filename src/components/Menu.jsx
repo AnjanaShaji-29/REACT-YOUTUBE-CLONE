@@ -6,9 +6,9 @@ import { AccountCircleOutlined, ArticleOutlined, ExploreOutlined, FlagOutlined, 
 
 const Container = styled.div`
     flex: 1;
-    height: 110vh;
-    color: white;
-    background-color: black;
+    height: 120vh;
+    color: ${({theme}) => theme.text };
+    background-color: ${({theme}) => theme.bgLighter };
     font-size: 14px;
     position: sticky;
     top:0;
@@ -40,7 +40,7 @@ const Item = styled.div`
 
 const Hr = styled.hr`
     margin: 15px 0px;
-    border: 0.5px solid #373737;
+    border: 0.5px solid ${({theme}) => theme.soft };
 `;
 
 const Login = styled.div`
@@ -61,7 +61,14 @@ const Button = styled.button`
     gap:5px;
 `;
 
-export default function Menu() {
+const Title = styled.h2`
+    font-size: 14px;
+    font-weight: 500;
+    color: #aaaaaa;
+    margin-bottom: 20px;
+`;
+
+export default function Menu({darkMode, setDarkMode}) {
   return (
     <Container>
     <Wrapper>
@@ -89,6 +96,7 @@ export default function Menu() {
         <Button> <AccountCircleOutlined /> SIGN IN </Button>
     </Login>
     <Hr />
+    <Title> Best of Youtube </Title>
     <Item>
         <LibraryMusicOutlined/> Music
     </Item>
@@ -114,7 +122,7 @@ export default function Menu() {
     <Item>
         <HelpOutlineOutlined /> Help
     </Item>
-    <Item>
+    <Item onClick={() => setDarkMode(!darkMode)}>
         <SettingsBrightnessOutlined/> Light Mode
     </Item>
     </Wrapper>
