@@ -37,6 +37,10 @@ const Item = styled.div`
     gap: 12px;
     cursor: pointer;
     padding: 6px 0px;
+
+    &:hover{
+        background-color: ${ ({theme}) => theme.soft};
+    }
 `;
 
 const Hr = styled.hr`
@@ -96,7 +100,7 @@ export default function Menu({darkMode, setDarkMode}) {
     </Item>
     <Hr />
     <Login> Sign in to like videos, comment and subscribe.
-        <Button> <AccountCircleOutlined /> SIGN IN </Button>
+      <Link to="/signin" style={{textDecoration: "none"}}>   <Button> <AccountCircleOutlined /> SIGN IN </Button> </Link>
     </Login>
     <Hr />
     <Title> Best of Youtube </Title>
